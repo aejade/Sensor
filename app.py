@@ -7,15 +7,15 @@ import time
 from PIL import Image
 import io
 
-# Add an image to the top of your Streamlit app
+# Add an image to the top of Streamlit app
 st.image('mqdc-idyllias-logo.png', use_column_width=True)
 
-# Add a title to your Streamlit app
+# Add a title to Streamlit app
 st.title('Herbie Sensor Readings')
 st.subheader('Welcome to the sensor data dashboard')
 st.write('Here you can see the latest sensor readings from the Herbie project.')
 
-# Path to your JSON key file
+# Path to JSON key file
 SERVICE_ACCOUNT_FILE = 'herbie_key.json'
 
 # Define the scope
@@ -64,7 +64,11 @@ def fetch_data():
 
 # Function to create line chart
 def create_line_chart(df, title):
+    
     custom_labels = {'Temp': 'Temperature', 'Moist': 'Soil Moisture', 'Humid': 'Humidity'}
+    
+    df_renamed = df.rename(columns=custom_labels)
+    
     fig = px.line(df, x=df.index, y=['Light', 'Water', 'Soil Moisture', 'Temperature', 'Humidity'],
                   labels={'value': 'Value', 'index': 'DateTime'},
                   title=title,
