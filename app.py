@@ -64,10 +64,11 @@ def fetch_data():
 
 # Function to create line chart
 def create_line_chart(df, title):
-    fig = px.line(df, x=df.index, y=['Light', 'Water', 'Moist', 'Temp', 'Humid'],
+    custom_labels = {'Temp': 'Temperature', 'Moist': 'Soil Moisture', 'Humid': 'Humidity'}
+    fig = px.line(df, x=df.index, y=['Light', 'Water', 'Soil Moisture', 'Temperature', 'Humidity'],
                   labels={'value': 'Value', 'index': 'DateTime'},
                   title=title,
-                  color_discrete_map={'Light': 'blue', 'Water': 'green', 'Moist': 'red', 'Temp': 'orange', 'Humid': 'purple'},
+                  color_discrete_map={'Light': 'blue', 'Water': 'green', 'Soil Moisture': 'red', 'Temperature': 'orange', 'Humidity': 'purple'},
                   line_dash_sequence=['solid']*5)  # Ensure solid lines for all sensors
     return fig
 
