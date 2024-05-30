@@ -16,7 +16,7 @@ st.subheader('Welcome to the sensor data dashboard')
 st.write('Here you can see the latest sensor readings from the Herbie project.')
 
 # Path to your JSON key file
-SERVICE_ACCOUNT_FILE = '/Users/juanarizti/Desktop/Herbie/herbie_key.json'
+SERVICE_ACCOUNT_FILE = 'herbie_key.json'
 
 # Define the scope
 SCOPES = [
