@@ -1,5 +1,4 @@
 import streamlit as st
-st_autorefresh = st.experimental_rerun(interval=3000, key="autorefresh")
 import gspread
 from google.oauth2.service_account import Credentials
 import pandas as pd
