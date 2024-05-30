@@ -65,11 +65,9 @@ def fetch_data():
 # Function to create line chart
 def create_line_chart(df, title):
     
-    custom_labels = {'Temp': 'Temperature', 'Moist': 'Soil Moisture', 'Humid': 'Humidity'}
+    df.rename(columns={'Temp': 'Temperature', 'Moist': 'Soil Moisture', 'Humid': 'Humidity'}, inplace=True)
     
-    df_renamed = df.rename(columns=custom_labels)
-    
-    fig = px.line(df_renamed, x=df.index, y=['Light', 'Water', 'Soil Moisture', 'Temperature', 'Humidity'],
+    fig = px.line(df, x=df.index, y=['Light', 'Water', 'Soil Moisture', 'Temperature', 'Humidity'],
                   labels={'value': 'Value', 'index': 'Time'},
                   title=title,
                   color_discrete_map={'Light': 'blue', 'Water': 'green', 'Soil Moisture': 'red', 'Temperature': 'orange', 'Humidity': 'purple'},
