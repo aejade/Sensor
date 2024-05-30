@@ -6,6 +6,8 @@ import plotly.express as px
 import time
 from PIL import Image
 import io
+import webview
+import time
 
 # Add an image to the top of Streamlit app
 st.image('mqdc-idyllias-logo.png', use_column_width=True)
@@ -98,3 +100,15 @@ while True:
 
     # Pause briefly before fetching new data and updating the charts
     time.sleep(5)  # Adjust the pause duration as needed
+
+
+def reload(window):
+    while True:
+        time.sleep(5)
+        window.load_url('idyllias-demo.streamlit.app/')
+        
+if __name__ == '__main__':
+    window = webview.create_window('Herbie', 'idyllias-demo.streamlit.app/')
+
+    webview.start(reload, window, http_server=True)
+
