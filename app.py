@@ -42,9 +42,11 @@ def fetch_data():
     # Convert the records to a pandas DataFrame
     df = pd.DataFrame(data)
 
+    df.rename(columns={'TimeString': 'Time'}, inplace=True)
+
     # Ensure 'TimeString' is datetime and set as index
-    df['TimeString'] = pd.to_datetime(df['TimeString'])
-    df.set_index('TimeString', inplace=True)
+    df['Time'] = pd.to_datetime(df['Time'])
+    df.set_index('Time', inplace=True)
 
     # Drop unwanted columns
     unwanted_columns = ['Herbie_ID']
