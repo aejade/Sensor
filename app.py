@@ -4,9 +4,11 @@ from google.oauth2.service_account import Credentials
 import pandas as pd
 import plotly.express as px
 import time
+from PIL import Image
+import io
 
 # Add an image to the top of your Streamlit app
-st.image('/Users/juanarizti/Desktop/Herbie/mqdc-idyllias-logo.png', use_column_width=True)
+st.image('mqdc-idyllias-logo.png', use_column_width=True)
 
 # Add a title to your Streamlit app
 st.title('Herbie Sensor Readings')
