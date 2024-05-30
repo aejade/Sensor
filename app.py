@@ -64,7 +64,7 @@ def fetch_data():
 
 # Function to create line chart
 def create_line_chart(df, title):
-    fig = px.line(df, x=df.index, y=['Light', 'Water', 'Moist', 'Temp', 'Humid'],
+    fig = px.line(df, x=df.index, y=['Light', 'Water', 'Soil Moisture', 'Temperature', 'Humidity'],
                   labels={'value': 'Value', 'index': 'DateTime'},
                   title=title,
                   color_discrete_map={'Light': 'blue', 'Water': 'green', 'Moist': 'red', 'Temp': 'orange', 'Humid': 'purple'},
@@ -81,7 +81,7 @@ while True:
     df = fetch_data()
 
     # Create real-time line chart
-    fig_realtime = create_line_chart(df.tail(2000), 'Real-Time Sensor Readings (Last 2000 Timestamps)')
+    fig_realtime = create_line_chart(df.tail(2000), 'Real-Time Sensor Readings')
     realtime_placeholder.plotly_chart(fig_realtime, use_container_width=True)
 
     # Resample data to hourly intervals and calculate the mean value
