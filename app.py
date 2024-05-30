@@ -70,7 +70,7 @@ def create_line_chart(df, title):
     df_renamed = df.rename(columns=custom_labels)
     
     fig = px.line(df_renamed, x=df.index, y=['Light', 'Water', 'Soil Moisture', 'Temperature', 'Humidity'],
-                  labels={'value': 'Value', 'index': 'DateTime'},
+                  labels={'value': 'Value', 'index': 'Time'},
                   title=title,
                   color_discrete_map={'Light': 'blue', 'Water': 'green', 'Soil Moisture': 'red', 'Temperature': 'orange', 'Humidity': 'purple'},
                   line_dash_sequence=['solid']*5)  # Ensure solid lines for all sensors
