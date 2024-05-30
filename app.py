@@ -7,8 +7,6 @@ import time
 from PIL import Image
 import io
 
-st_autorefresh = st.experimental_rerun(interval=3000, key="autorefresh")
-
 # Add an image to the top of your Streamlit app
 st.image('mqdc-idyllias-logo.png', use_column_width=True)
 
