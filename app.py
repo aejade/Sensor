@@ -88,16 +88,6 @@ while True:
     # Fetch real-time data
     df = fetch_data()
     
-# Create placeholders for line charts and metrics
-metric_placeholder = st.empty()
-realtime_placeholder = st.empty()
-hourly_placeholder = st.empty()
-
-# Continuous loop to update line charts
-while True:
-    # Fetch real-time data
-    df = fetch_data()
-
     
     # Create real-time line chart
     fig_realtime = create_line_chart(df.tail(2000), 'Real-Time Sensor Readings')
